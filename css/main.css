@@ -9,6 +9,34 @@ body#index{
     height: 100vh; /* Ensure the body takes the entire viewport height */
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* This will space out the main content evenly */
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 100px); /* Adjusted for the header/footer height */
+    padding: 20px;
+}
+
+
+    .container h1 {
+        font-size: 80px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+.section {
+    margin: 10px 0; /* Space between sections */
+    padding: 20px;
+    width: 80%; /* Set a max width for the content */
+    max-width: 1000px; /* You can adjust max width as necessary */
+    background-color: rgba(255, 255, 255, 0.8); /* Giving a slight transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: black;
+}
 
 /* Reset default margin and padding */
 * {
