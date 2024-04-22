@@ -1,3 +1,67 @@
+/* Put your existing styles here... */
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    /* For tablets and smaller devices: */
+
+    /* Make the navigation stack vertically */
+    #navigation li {
+        display: block;
+        margin: 5px 0; /* Add some space between menu items */
+    }
+
+    #navigation a {
+        display: block;
+        padding: 10px;
+    }
+
+    /* Adjust header text size for smaller screens */
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* For mobile phones: */
+
+    /* Stack the navigation vertically and adjust padding */
+    #navigation li {
+        display: block;
+    }
+
+    #navigation a {
+        display: block;
+        padding: 8px 15px; /* Slightly reduce padding for smaller screens */
+    }
+
+    /* Reduce the header text size even more for small screens */
+    header h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (orientation: landscape) {
+    /* Specific styles for landscape orientation */
+    body {
+        /* Adjust body styling if needed when in landscape */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Mobile devices styles */
+    body#index {
+        /* Ensuring the background image covers the entire viewport on mobile */
+        background-size: cover !important;
+        background-position: center center !important; /* Center the background image */
+    }
+    /* ... other mobile styles ... */
+}
+
+/* You may want to add more specific media queries for larger screens (like desktop monitors) */
+
+
+
+
 body#index{
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -15,7 +79,7 @@ body#index{
     justify-content: space-around; /* This will space out the main content evenly */
     align-items: center;
     text-align: center;
-    height: calc(100vh - 100px); /* Adjusted for the header/footer height */
+    height: calc(90vh - 90px); /* Adjusted for the header/footer height */
     padding: 20px;
 }
 
