@@ -62,8 +62,8 @@
                     const item = document.createElement('div');
                     item.className = "recipe-item"; /* Apply class for consistent styling */
                     item.innerHTML = `<h3>${recipe.name}</h3><p>${recipe.description}</p>
-                                                               <button onclick="editRecipe(${recipe.id})">Edit</button>
-                                                               <button onclick="deleteRecipe(${recipe.id})">Delete</button>`;
+                                                                                               <button onclick="editRecipe(${recipe.id})">Edit</button>
+                                                                                               <button onclick="deleteRecipe(${recipe.id})">Delete</button>`;
                     list.appendChild(item);
                 });
             }
@@ -91,6 +91,8 @@
 
             displayRecipes(); /* Initial display of recipes */
         </script>
+
+
     </div>
 </body>
 </html>

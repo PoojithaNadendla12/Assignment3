@@ -38,6 +38,10 @@
     header h1 {
         font-size: 1.2rem;
     }
+    .container h1 {
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+    }
 }
 
 @media (orientation: landscape) {
@@ -60,17 +64,15 @@
 /* You may want to add more specific media queries for larger screens (like desktop monitors) */
 
 
-
-
 body#index{
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #e5f5e5; /* Default background color */
+    background-color: #e5f5e5; 
     background-image: url("../img/Health.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure the body takes the entire viewport height */
+    height: 100vh;
 }
 
 .container {
@@ -674,15 +676,15 @@ footer {
 
 
 /* Styles specific to the Recipe page */
-body#recipe{
+body#recipe {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #e5f5e5; /* Default background color */
+    background-color: #e5f5e5;
     background-image: url("../img/Health.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure the body takes the entire viewport height */
+    height: 100vh;
 }
 
 body#recipe {
@@ -784,7 +786,21 @@ body#recipe {
 }
 
 
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+    footer p {
+        margin: 0;
+    }
+
 /* Nutrition page styles */
+
+
 body#nutrition {
     background-image: url("../img/Health.jpg");
     background-size: cover;
