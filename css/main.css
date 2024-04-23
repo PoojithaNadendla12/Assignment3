@@ -1,14 +1,108 @@
+/* Put your existing styles here... */
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    /* For tablets and smaller devices: */
+
+    /* Make the navigation stack vertically */
+    #navigation li {
+        display: block;
+        margin: 5px 0; /* Add some space between menu items */
+    }
+
+    #navigation a {
+        display: block;
+        padding: 10px;
+    }
+
+    /* Adjust header text size for smaller screens */
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* For mobile phones: */
+
+    /* Stack the navigation vertically and adjust padding */
+    #navigation li {
+        display: block;
+    }
+
+    #navigation a {
+        display: block;
+        padding: 8px 15px; /* Slightly reduce padding for smaller screens */
+    }
+
+    /* Reduce the header text size even more for small screens */
+    header h1 {
+        font-size: 1.2rem;
+    }
+    .container h1 {
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+@media (orientation: landscape) {
+    /* Specific styles for landscape orientation */
+    body {
+        /* Adjust body styling if needed when in landscape */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Mobile devices styles */
+    body#index {
+        /* Ensuring the background image covers the entire viewport on mobile */
+        background-size: cover !important;
+        background-position: center center !important; /* Center the background image */
+    }
+    /* ... other mobile styles ... */
+}
+
+/* You may want to add more specific media queries for larger screens (like desktop monitors) */
+
+
 body#index{
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #e5f5e5; /* Default background color */
+    background-color: #e5f5e5; 
     background-image: url("../img/Health.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure the body takes the entire viewport height */
+    height: 100vh;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* This will space out the main content evenly */
+    align-items: center;
+    text-align: center;
+    height: calc(90vh - 90px); /* Adjusted for the header/footer height */
+    padding: 20px;
+}
+
+
+    .container h1 {
+        font-size: 80px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+.section {
+    margin: 10px 0; /* Space between sections */
+    padding: 20px;
+    width: 80%; /* Set a max width for the content */
+    max-width: 1000px; /* You can adjust max width as necessary */
+    background-color: rgba(255, 255, 255, 0.8); /* Giving a slight transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: black;
+}
 
 /* Reset default margin and padding */
 * {
@@ -582,15 +676,15 @@ footer {
 
 
 /* Styles specific to the Recipe page */
-body#recipe{
+body#recipe {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #e5f5e5; /* Default background color */
+    background-color: #e5f5e5;
     background-image: url("../img/Health.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure the body takes the entire viewport height */
+    height: 100vh;
 }
 
 body#recipe {
@@ -692,7 +786,21 @@ body#recipe {
 }
 
 
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+    footer p {
+        margin: 0;
+    }
+
 /* Nutrition page styles */
+
+
 body#nutrition {
     background-image: url("../img/Health.jpg");
     background-size: cover;
