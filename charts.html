@@ -23,21 +23,28 @@
         </ul>
     </nav>
 
-    <!-- Main content with charts -->
+    <!-- Bar chart -->
     <div class="chart-container">
         <canvas id="proteinBarChart" aria-label="Protein Content per Recipe" role="img"></canvas>
     </div>
 
+    <!-- Pie chart -->
     <div class="chart-container">
-        <canvas id="fatBarChart" aria-label="Fat Content per Recipe" role="img"></canvas>
+        <canvas id="nutritionPieChart" aria-label="Nutrition Pie Chart" role="img"></canvas>
     </div>
 
+    <!-- Line graph -->
     <div class="chart-container">
-        <canvas id="carbBarChart" aria-label="Carbohydrate Content per Recipe" role="img"></canvas>
+        <canvas id="nutritionLineGraph" aria-label="Nutrition Line Graph" role="img"></canvas>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nutrition Stats</p>
+    </footer>
+
+    <!-- JavaScript for chart initialization -->
     <script>
-        // Chart data and initialization code
         const labels = ['Grilled Chicken', 'Lentil Soup', 'Beef Stew', 'Vegetable Stir Fry', 'Salmon Salad', 'Pork Tacos', 'Quinoa Bowl'];
 
         const barChartOptions = {
@@ -77,6 +84,7 @@
             }
         };
 
+        // Bar chart
         new Chart(document.getElementById('proteinBarChart'), {
             type: 'bar',
             data: {
@@ -101,50 +109,98 @@
             }
         });
 
-        // Remaining chart initialization (unchanged)
-        new Chart(document.getElementById('fatBarChart'), {
-            type: 'bar',
+        // Pie chart (Nutrition Distribution)
+        new Chart(document.getElementById('nutritionPieChart'), {
+            type: 'pie',
             data: {
-                labels,
+                labels: ['Protein', 'Fat', 'Carbohydrates'],
                 datasets: [
                     {
-                        label: 'Fat (g)',
-                        data: [10, 5, 15, 8, 13, 18, 7],
-                        backgroundColor: 'rgba(231, 76, 60, 0.7)'
+                        label: 'Nutrition',
+                        data: [45, 15, 35], // Example data
+                        backgroundColor: [
+                            'rgba(52, 152, 219, 0.7)', // Blue for Protein
+                            'rgba(231, 76, 60, 0.7)', // Red for Fat
+                            'rgba(46, 204, 113, 0.7)' // Green for Carbs
+                        ]
                     }
                 ]
             },
             options: {
-                ...barChartOptions,
+                responsive: true,
                 plugins: {
-                    ...barChartOptions.plugins,
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
                     title: {
-                        ...barChartOptions.plugins.title,
-                        text: 'Fat Content per Recipe'
+                        display: true,
+                        text: 'Nutrition Distribution (Pie Chart)',
+                        font: {
+                            size: 18
+                        }
                     }
                 }
             }
         });
 
-        new Chart(document.getElementById('carbBarChart'), {
-            type: 'bar',
+        // Line graph (Nutrition Over Time)
+        new Chart(document.getElementById('nutritionLineGraph'), {
+            type: 'line',
             data: {
-                labels,
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'], // Example labels
                 datasets: [
                     {
+                        label: 'Protein (g)',
+                        data: [15, 20, 18, 25, 23, 30, 27], // Example data
+                        borderColor: 'rgba(52, 152, 219, 1)', // Blue for Protein
+                        backgroundColor: 'rgba(52, 152, 219, 0.2)', // Light blue for shading
+                        fill: true
+                    },
+                    {
+                        label: 'Fat (g)',
+                        data: [10, 5, 8, 12, 15, 18, 22], // Example data
+                        borderColor: 'rgba(231, 76, 60, 1)', // Red for Fat
+                        backgroundColor: 'rgba(231, 76, 60, 0.2)', // Light red for shading
+                        fill: true
+                    },
+                    {
                         label: 'Carbohydrates (g)',
-                        data: [1, 30, 20, 25, 5, 45, 35],
-                        backgroundColor: 'rgba(46, 204, 113, 0.7)'
+                        data: [30, 35, 25, 45, 40, 50, 55], // Example data
+                        borderColor: 'rgba(46, 204, 113, 1)', // Green for Carbs
+                        backgroundColor: 'rgba(46, 204, 113, 0.2)', // Light green for shading
+                        fill: true
                     }
                 ]
             },
             options: {
-                ...barChartOptions,
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    ...barChartOptions.plugins,
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
                     title: {
-                        ...barChartOptions.plugins.title,
-                        text: 'Carbohydrate Content per Recipe'
+                        display: true,
+                        text: 'Nutrition Over Time (Line Graph)',
+                        font: {
+                            size: 18
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Day'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Amount in grams'
+                        }
                     }
                 }
             }
